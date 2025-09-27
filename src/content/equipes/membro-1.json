@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "nome": "Carlos Silva",
+  "cargo": "Engenheiro Eletricista Sênior",
+  "ordem": 1,
+  "foto": {
+    "url": "/uploads/team_member_1_b10e3c4a2a.jpg"
+  }
+}

@@ -1,0 +1,1 @@
+const n=9,a="Preciso de manutenção constante?",s="Não! A manutenção é mínima - apenas limpeza ocasional dos painéis. Os sistemas têm garantia de 25 anos.",o={id:9,pergunta:a,resposta:s};export{o as default,n as id,a as pergunta,s as resposta};

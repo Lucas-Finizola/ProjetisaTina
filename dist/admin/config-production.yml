@@ -1,0 +1,194 @@
+# Configuração do Decap CMS para PRODUÇÃO
+# Esta configuração deve ser usada quando o site estiver em produção
+# com controle de acesso adequado via Git Gateway
+
+backend:
+  name: git-gateway
+  branch: main # ou master, dependendo do seu repositório
+
+# Configuração de mídia
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Configurações de editor
+editor:
+  preview: true
+
+# Configurações de exibição
+display_url: https://seu-dominio.com.br
+logo_url: /uploads/logo.png
+
+# Configurações de autenticação e roles
+publish_mode: editorial_workflow
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+  - name: "projetos"
+    label: "Projetos"
+    folder: "src/content/projetos"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: true
+    fields:
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL amigável do projeto (ex: projeto-energia-solar)" }
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { 
+          label: "Imagem Principal", 
+          name: "imagem", 
+          widget: "object", 
+          fields: [
+            { label: "URL da Imagem", name: "url", widget: "image", required: true },
+            { label: "Texto Alternativo", name: "alt", widget: "string", required: false, hint: "Descrição da imagem para acessibilidade" }
+          ]
+        }
+      - { 
+          label: "Descrição", 
+          name: "descricao", 
+          widget: "markdown",
+          hint: "Use Markdown para formatação. Para inserir imagens: ![alt text](URL). Para links: [texto](URL)"
+        }
+      - { 
+          label: "Galeria de Imagens", 
+          name: "galeria", 
+          widget: "list", 
+          required: false,
+          fields: [
+            { label: "Imagem", name: "url", widget: "image" },
+            { label: "Legenda", name: "legenda", widget: "string", required: false }
+          ]
+        }
+      - { 
+          label: "Links Relacionados", 
+          name: "links", 
+          widget: "list", 
+          required: false,
+          fields: [
+            { label: "Título do Link", name: "titulo", widget: "string" },
+            { label: "URL", name: "url", widget: "string" },
+            { label: "Abrir em nova aba", name: "nova_aba", widget: "boolean", default: true }
+          ]
+        }
+      - { label: "Status", name: "status", widget: "select", options: ["rascunho", "publicado"], default: "rascunho" }
+      - { label: "Data de Criação", name: "data_criacao", widget: "datetime", default: "" }
+
+  - name: "noticias"
+    label: "Notícias"
+    folder: "src/content/noticias"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: true
+    fields:
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL amigável da notícia (ex: nova-tecnologia-solar)" }
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Data de Publicação", name: "dataPublicacao", widget: "datetime" }
+      - { 
+          label: "Imagem de Destaque", 
+          name: "imagem", 
+          widget: "object", 
+          fields: [
+            { label: "URL da Imagem", name: "url", widget: "image", required: true },
+            { label: "Texto Alternativo", name: "alt", widget: "string", required: false, hint: "Descrição da imagem para acessibilidade" }
+          ]
+        }
+      - { 
+          label: "Resumo", 
+          name: "resumo", 
+          widget: "text", 
+          required: false,
+          hint: "Breve resumo da notícia (aparece nas listagens)"
+        }
+      - { 
+          label: "Conteúdo", 
+          name: "body", 
+          widget: "markdown",
+          hint: "Use Markdown para formatação. Para inserir imagens: ![alt text](URL). Para links: [texto](URL)"
+        }
+      - { 
+          label: "Tags", 
+          name: "tags", 
+          widget: "list", 
+          required: false,
+          hint: "Palavras-chave relacionadas à notícia"
+        }
+      - { 
+          label: "Links Relacionados", 
+          name: "links", 
+          widget: "list", 
+          required: false,
+          fields: [
+            { label: "Título do Link", name: "titulo", widget: "string" },
+            { label: "URL", name: "url", widget: "string" },
+            { label: "Abrir em nova aba", name: "nova_aba", widget: "boolean", default: true }
+          ]
+        }
+      - { label: "Status", name: "status", widget: "select", options: ["rascunho", "publicado"], default: "rascunho" }
+      - { label: "Autor", name: "autor", widget: "string", default: "Equipe Projetisa" }
+
+  - name: "servicos"
+    label: "Serviços"
+    folder: "src/content/servicos"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: true
+    fields:
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL amigável do serviço" }
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { 
+          label: "Imagem Principal", 
+          name: "imagem", 
+          widget: "object", 
+          fields: [
+            { label: "URL da Imagem", name: "url", widget: "image", required: true },
+            { label: "Texto Alternativo", name: "alt", widget: "string", required: false }
+          ]
+        }
+      - { 
+          label: "Descrição Curta", 
+          name: "descricao_curta", 
+          widget: "text",
+          hint: "Breve descrição do serviço (aparece nas listagens)"
+        }
+      - { 
+          label: "Descrição Completa", 
+          name: "descricao", 
+          widget: "markdown",
+          hint: "Descrição detalhada do serviço com formatação Markdown"
+        }
+      - { label: "Status", name: "status", widget: "select", options: ["ativo", "inativo"], default: "ativo" }
+      - { label: "Ordem de Exibição", name: "ordem", widget: "number", default: 1, hint: "Ordem em que o serviço aparece na listagem" }
+
+  # Configurações do site (apenas para administradores)
+  - name: "configuracoes"
+    label: "Configurações do Site"
+    files:
+      - label: "Informações Gerais"
+        name: "geral"
+        file: "src/content/config/site.json"
+        fields:
+          - { label: "Nome do Site", name: "nome_site", widget: "string" }
+          - { label: "Descrição", name: "descricao", widget: "text" }
+          - { label: "URL do Site", name: "url", widget: "string" }
+          - { label: "Email de Contato", name: "email", widget: "string" }
+          - { label: "Telefone", name: "telefone", widget: "string" }
+          - { 
+              label: "Redes Sociais", 
+              name: "redes_sociais", 
+              widget: "object",
+              fields: [
+                { label: "Facebook", name: "facebook", widget: "string", required: false },
+                { label: "Instagram", name: "instagram", widget: "string", required: false },
+                { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              ]
+            }
+

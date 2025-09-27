@@ -1,0 +1,1 @@
+const e=2,a="Quanto custa um sistema de energia solar?",o="O investimento varia conforme o consumo e tipo de propriedade. Fazemos uma simulação gratuita personalizada para você!",s={id:2,pergunta:a,resposta:o};export{s as default,e as id,a as pergunta,o as resposta};

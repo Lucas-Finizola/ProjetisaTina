@@ -1,0 +1,24 @@
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  will-change: transform;
+  margin-left: -1rem; /* Offset for the slide margin */
+  margin-right: -1rem; /* Offset for the slide margin */
+}
+
+.embla__slide {
+  flex: 0 0 100%; /* Default to full width for mobile */
+  min-width: 0;
+  padding-left: 1rem; /* Gutter between slides */
+}
+
+/* On larger screens, show 3 slides with the middle one centered */
+@media (min-width: 768px) {
+  .embla__slide {
+    flex: 0 0 33.3333%;
+  }
+}

@@ -1,0 +1,1 @@
+const a=7,o="Em quanto tempo o investimento se paga?",e="Normalmente entre 3 a 5 anos, dependendo do seu consumo atual. Após esse período, é economia pura por mais de 20 anos!",s={id:7,pergunta:o,resposta:e};export{s as default,a as id,o as pergunta,e as resposta};

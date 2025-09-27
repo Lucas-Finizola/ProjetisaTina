@@ -1,0 +1,1 @@
+const o=11,a="A energia solar funciona em dias nublados?",s="Sim! Os painéis captam luz solar mesmo em dias nublados. À noite, você usa energia da rede elétrica com créditos gerados durante o dia.",e={id:11,pergunta:a,resposta:s};export{e as default,o as id,a as pergunta,s as resposta};

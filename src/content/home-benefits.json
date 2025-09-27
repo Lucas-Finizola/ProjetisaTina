@@ -1,0 +1,26 @@
+{
+  "title": "Por Que Escolher Energia Solar?",
+  "subtitle": "Descubra as vantagens exclusivas que só a energia solar pode oferecer",
+  "benefits": [
+    {
+      "icon": "DollarSign",
+      "title": "Economia de até 95%",
+      "description": "Reduza drasticamente sua conta de luz e proteja-se dos aumentos tarifários."
+    },
+    {
+      "icon": "Leaf",
+      "title": "100% Sustentável",
+      "description": "Contribua para um futuro mais verde utilizando energia limpa e renovável."
+    },
+    {
+      "icon": "TrendingUp",
+      "title": "Valoriza seu Imóvel",
+      "description": "Aumente o valor de mercado da sua propriedade com tecnologia moderna."
+    },
+    {
+      "icon": "Shield",
+      "title": "Garantia de 25 Anos",
+      "description": "Sistemas duráveis com baixíssima manutenção."
+    }
+  ]
+}

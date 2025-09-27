@@ -1,0 +1,78 @@
+{
+  "hero": {
+    "title": "Excelência em Engenharia Elétrica",
+    "subtitle": "Soluções completas com foco em eficiência, sustentabilidade e inovação."
+  },
+  "history": {
+    "title": "Nossa História e Compromisso",
+    "paragraph": "A Projetisa Construções Ltda é uma empresa do setor de engenharia elétrica, especializada em fornecer serviços abrangentes, projetos de ponta, execução de obras eficientes e soluções inovadoras com foco na eficiência energética e sustentabilidade, sempre levando em consideração a responsabilidade social e ambiental.",
+    "features": [
+      {
+        "icon": "Wind",
+        "title": "Sustentabilidade",
+        "description": "A sustentabilidade é um pilar fundamental. Buscamos minimizar o impacto ambiental de nossos projetos, adotando práticas e tecnologias sustentáveis e promovendo a conscientização sobre a importância da preservação do meio ambiente."
+      },
+      {
+        "icon": "Handshake",
+        "title": "Parcerias Sólidas",
+        "description": "Valorizamos a parceria com nossos clientes e acreditamos na construção de relacionamentos sólidos e duradouros. Trabalhamos em estreita colaboração, compreendendo suas necessidades para oferecer soluções personalizadas."
+      }
+    ],
+    "stats": [
+      {
+        "value": "+5 Anos",
+        "label": "de Experiência"
+      },
+      {
+        "value": "+200",
+        "label": "Projetos Concluídos"
+      },
+      {
+        "value": "+5MW",
+        "label": "em Potência Instalada"
+      },
+      {
+        "value": "100%",
+        "label": "de Clientes Satisfeitos"
+      }
+    ]
+  },
+  "pillars": {
+    "title": "Nossos Pilares",
+    "items": [
+      {
+        "icon": "Eye",
+        "title": "Visão",
+        "description": "Ser reconhecido como referência regional na área da engenharia elétrica, buscando constantemente a satisfação dos clientes, gerando soluções inovadoras e criando valor de forma sustentável."
+      },
+      {
+        "icon": "Target",
+        "title": "Missão",
+        "description": "Atuar no setor da engenharia elétrica com padrões de excelência. Oferecer soluções inovadoras e tecnológicas, especialmente em energia renovável, valorizando colaboradores e exercendo responsabilidade social."
+      },
+      {
+        "icon": "Gem",
+        "title": "Valores",
+        "description": "Compromisso, Qualidade, Inovação, Segurança, Sustentabilidade e a Satisfação total do Cliente em cada etapa do projeto."
+      }
+    ]
+  },
+  "area": {
+    "title": "Onde Atuamos",
+    "paragraph": "Com base em João Pessoa, Paraíba, nossa atuação se estende por toda a região Nordeste, levando soluções energéticas eficientes e sustentáveis para clientes residenciais, comerciais e industriais.",
+    "image": {
+      "url": "/uploads/mapa_regiao_nordeste.png",
+      "alt": "Mapa da região de atuação da Projetisa no Nordeste"
+    }
+  },
+  "team": {
+    "title": "Nossa Equipe",
+    "subtitle": "Nossa equipe de profissionais altamente qualificados e experientes é um dos nossos maiores diferenciais. Eles possuem o conhecimento técnico e a expertise necessários para enfrentar os desafios mais complexos e entregar resultados excepcionais em cada projeto que realizamos."
+  },
+  "cta": {
+    "title": "Veja um pouco mais do nosso trabalho",
+    "subtitle": "Nossos projetos refletem nosso compromisso com a qualidade e a inovação. Explore nosso portfólio.",
+    "buttonText": "Conhecer Projetos",
+    "buttonLink": "/projetos"
+  }
+}

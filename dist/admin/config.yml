@@ -1,0 +1,156 @@
+
+# Configuração do Decap CMS para desenvolvimento e produção
+# Para desenvolvimento local, use test-repo
+# Para produção, altere para git-gateway
+backend:
+  name: test-repo
+
+# Configuração de mídia
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Configurações de editor
+editor:
+  preview: true
+
+# Configurações de exibição
+display_url: http://localhost:5173
+logo_url: /uploads/logo.png
+
+collections:
+  - name: "projetos"
+    label: "Projetos"
+    folder: "src/content/projetos"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: true
+    fields:
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL amigável do projeto (ex: projeto-energia-solar)" }
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { 
+          label: "Imagem Principal", 
+          name: "imagem", 
+          widget: "object", 
+          fields: [
+            { label: "URL da Imagem", name: "url", widget: "image", required: true },
+            { label: "Texto Alternativo", name: "alt", widget: "string", required: false, hint: "Descrição da imagem para acessibilidade" }
+          ]
+        }
+      - { 
+          label: "Descrição", 
+          name: "descricao", 
+          widget: "markdown",
+          hint: "Use Markdown para formatação. Para inserir imagens: ![alt text](URL). Para links: [texto](URL)"
+        }
+      - { 
+          label: "Galeria de Imagens", 
+          name: "galeria", 
+          widget: "list", 
+          required: false,
+          fields: [
+            { label: "Imagem", name: "url", widget: "image" },
+            { label: "Legenda", name: "legenda", widget: "string", required: false }
+          ]
+        }
+      - { 
+          label: "Links Relacionados", 
+          name: "links", 
+          widget: "list", 
+          required: false,
+          fields: [
+            { label: "Título do Link", name: "titulo", widget: "string" },
+            { label: "URL", name: "url", widget: "string" },
+            { label: "Abrir em nova aba", name: "nova_aba", widget: "boolean", default: true }
+          ]
+        }
+
+  - name: "noticias"
+    label: "Notícias"
+    folder: "src/content/noticias"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: true
+    fields:
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL amigável da notícia (ex: nova-tecnologia-solar)" }
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Data de Publicação", name: "dataPublicacao", widget: "datetime" }
+      - { 
+          label: "Imagem de Destaque", 
+          name: "imagem", 
+          widget: "object", 
+          fields: [
+            { label: "URL da Imagem", name: "url", widget: "image", required: true },
+            { label: "Texto Alternativo", name: "alt", widget: "string", required: false, hint: "Descrição da imagem para acessibilidade" }
+          ]
+        }
+      - { 
+          label: "Resumo", 
+          name: "resumo", 
+          widget: "text", 
+          required: false,
+          hint: "Breve resumo da notícia (aparece nas listagens)"
+        }
+      - { 
+          label: "Conteúdo", 
+          name: "body", 
+          widget: "markdown",
+          hint: "Use Markdown para formatação. Para inserir imagens: ![alt text](URL). Para links: [texto](URL)"
+        }
+      - { 
+          label: "Tags", 
+          name: "tags", 
+          widget: "list", 
+          required: false,
+          hint: "Palavras-chave relacionadas à notícia"
+        }
+      - { 
+          label: "Links Relacionados", 
+          name: "links", 
+          widget: "list", 
+          required: false,
+          fields: [
+            { label: "Título do Link", name: "titulo", widget: "string" },
+            { label: "URL", name: "url", widget: "string" },
+            { label: "Abrir em nova aba", name: "nova_aba", widget: "boolean", default: true }
+          ]
+        }
+
+  - name: "servicos"
+    label: "Serviços"
+    folder: "src/content/servicos"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: true
+    fields:
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL amigável do serviço" }
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { 
+          label: "Imagem Principal", 
+          name: "imagem", 
+          widget: "object", 
+          fields: [
+            { label: "URL da Imagem", name: "url", widget: "image", required: true },
+            { label: "Texto Alternativo", name: "alt", widget: "string", required: false }
+          ]
+        }
+      - { 
+          label: "Descrição Curta", 
+          name: "descricao_curta", 
+          widget: "text",
+          hint: "Breve descrição do serviço (aparece nas listagens)"
+        }
+      - { 
+          label: "Descrição Completa", 
+          name: "descricao", 
+          widget: "markdown",
+          hint: "Descrição detalhada do serviço com formatação Markdown"
+        }
