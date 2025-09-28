@@ -12,11 +12,17 @@ export default defineConfig({
     },
   },
   server: {
+    host: '0.0.0.0',
     proxy: {
       '/api': {
         target: 'http://localhost:1337',
         changeOrigin: true,
       }
-    }
+    },
+    hmr: {
+      clientPort: 443,
+      host: process.env.IDX_WORKSPACE_HOST,
+    },
+    cors: true,
   }
 })

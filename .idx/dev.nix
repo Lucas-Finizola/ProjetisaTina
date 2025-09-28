@@ -7,12 +7,14 @@
   # Use https://search.nixos.org/packages to find packages
   packages = [
     pkgs.nodejs_20
-    # Add pnpm as a direct Nix package
     pkgs.pnpm
   ];
 
   # Sets environment variables in the workspace
-  env = {};
+  env = {
+    # Change TinaCMS datalayer port to avoid conflicts
+    TINA_PUBLIC_DATALAYER_PORT = "9001";
+  };
 
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
@@ -24,26 +26,16 @@
     workspace = {
       # Runs when a workspace is first created
       onCreate = {
-        # Now that pnpm is a Nix package, we can use it directly.
+        # Use pnpm to install, as defined in packages
         pnpm-install = "pnpm install";
       };
-      # Runs when the workspace is (re)started
-      onStart = {
-        # Start the dev server
-        dev-server = "pnpm run dev";
-      };
+      # onStart is not needed, you will run the dev server manually
+      onStart = {};
     };
 
-    # Enable previews
+    # Previews are disabled to give you manual control over the server
     previews = {
-      enable = true;
-      previews = {
-        web = {
-          # Run "pnpm run dev" with PORT set to IDX's defined port
-          command = ["pnpm" "run" "dev" "--" "--port" "$PORT"];
-          manager = "web";
-        };
-      };
+      enable = false;
     };
   };
 }

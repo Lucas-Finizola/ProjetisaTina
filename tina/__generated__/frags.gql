@@ -1,0 +1,112 @@
+fragment PostParts on Post {
+  __typename
+  title
+  slug
+  date
+  excerpt
+  author
+  category
+  image
+  featured
+  body
+}
+
+fragment PageParts on Page {
+  __typename
+  title
+  slug
+  description
+  image
+  seo {
+    __typename
+    metaTitle
+    metaDescription
+  }
+  body
+}
+
+fragment ProjectParts on Project {
+  __typename
+  title
+  slug
+  description
+  date
+  image
+  client
+  location
+  category
+  power
+  gallery {
+    __typename
+    image
+    caption
+  }
+  specs {
+    __typename
+    voltage
+    panels
+    inverter
+    area
+  }
+  featured
+  body
+}
+
+fragment ServiceParts on Service {
+  __typename
+  title
+  slug
+  description
+  category
+  icon
+  image
+  price
+  duration
+  features {
+    __typename
+    feature
+  }
+  process {
+    __typename
+    step
+    description
+  }
+  featured
+  body
+}
+
+fragment SettingsParts on Settings {
+  __typename
+  title
+  description
+  logo
+  contact {
+    __typename
+    email
+    phone
+    whatsapp
+    address
+    city
+    state
+    zipCode
+  }
+  social {
+    __typename
+    facebook
+    instagram
+    linkedin
+    youtube
+  }
+  business {
+    __typename
+    cnpj
+    crea
+    workingHours
+  }
+  seo {
+    __typename
+    metaTitle
+    metaDescription
+    ogImage
+  }
+}
